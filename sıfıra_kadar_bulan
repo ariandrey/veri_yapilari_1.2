@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int sifiri_bul(int num1, int num2) {
+    int count = 0;
+    while (num1 != 0 && num2 != 0) {
+        if (num1 >= num2) {
+            num1 = num1 - num2;
+        } else {
+            num2 = num2 - num1;
+        }
+        count++;
+    }
+    return count;
+}
+
+/*
+1->Başlangıçta işlem sayacını sıfıra eşitle
+2->num1, num2'den büyük veya eşit olduğu sürece, num1'den num2'yi çıkar ve işlem sayacını +1 arttır
+3->num2, num1'den büyük olduğu sürece, num2'den num1'i çıkar ve işlem sayacını +1 arttır
+4->num1 veya num2 sıfır olduğunda, işlem sayacını döndür
+*/
+
+/* 
+kullanıcıdan 2 tam sayı alır
+sifiri_bul()
+*/
+
+int main() {
+    int num1, num2;
+    printf("num1 giriniz: ");
+    scanf("%d", &num1);
+    printf("num2 giriniz: ");
+    scanf("%d", &num2);
+    int result = sifiri_bul(num1, num2);
+    printf("Sıfırı bulmak için gereken işlem sayısı: %d", result);
+    return 0;
+}
